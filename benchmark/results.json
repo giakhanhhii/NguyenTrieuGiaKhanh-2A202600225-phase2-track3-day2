@@ -1,0 +1,197 @@
+{
+  "results": [
+    {
+      "id": 1,
+      "scenario": "Recall user name after several turns",
+      "group": "profile recall",
+      "turns": [
+        "My name is Linh.",
+        "I am learning agent systems this week.",
+        "I like simple examples.",
+        "Thanks, continue.",
+        "Can you give one more note?",
+        "What is my name?"
+      ],
+      "no_memory_result": "I do not know because this run does not retain memory across turns.",
+      "with_memory_result": "Your name is Linh.",
+      "with_memory_prompt_chars": 1205,
+      "pass": true,
+      "checks": {
+        "with_memory_match": true,
+        "no_memory_baseline": true,
+        "prompt_budget_ok": true
+      }
+    },
+    {
+      "id": 2,
+      "scenario": "Language preference recall",
+      "group": "profile recall",
+      "turns": [
+        "I like Python and I do not like Java.",
+        "I want to build an agent for a class demo.",
+        "Can you recommend a programming language for my next agent project?"
+      ],
+      "no_memory_result": "Python is a common default choice, but I am not using stored preferences here.",
+      "with_memory_result": "I still recommend Python for you. You previously said you like Python and dislike Java, so Python is the better fit for this task.",
+      "with_memory_prompt_chars": 596,
+      "pass": true,
+      "checks": {
+        "with_memory_match": true,
+        "no_memory_baseline": true,
+        "prompt_budget_ok": true
+      }
+    },
+    {
+      "id": 3,
+      "scenario": "Allergy conflict update",
+      "group": "conflict update",
+      "turns": [
+        "I am allergic to cow milk.",
+        "Actually I am allergic to soy, not cow milk.",
+        "What is my allergy?"
+      ],
+      "no_memory_result": "I do not know because this run does not retain memory across turns.",
+      "with_memory_result": "Your allergy profile is currently set to soy.",
+      "with_memory_prompt_chars": 713,
+      "pass": true,
+      "checks": {
+        "with_memory_match": true,
+        "no_memory_baseline": true,
+        "prompt_budget_ok": true
+      }
+    },
+    {
+      "id": 4,
+      "scenario": "Response style recall",
+      "group": "profile recall",
+      "turns": [
+        "Please keep answers concise.",
+        "I am preparing a short demo.",
+        "What style should you use?"
+      ],
+      "no_memory_result": "I do not know because this run does not retain memory across turns.",
+      "with_memory_result": "You asked for a concise response style.",
+      "with_memory_prompt_chars": 572,
+      "pass": true,
+      "checks": {
+        "with_memory_match": true,
+        "no_memory_baseline": true,
+        "prompt_budget_ok": true
+      }
+    },
+    {
+      "id": 5,
+      "scenario": "Async confusion episodic recall",
+      "group": "episodic recall",
+      "turns": [
+        "I am confused about async and await.",
+        "Thanks, that still feels new to me.",
+        "Can you explain async/await again?"
+      ],
+      "no_memory_result": "Async and await are Python features for asynchronous code.",
+      "with_memory_result": "Last time async/await felt confusing, so here is the simpler version: async defines a coroutine, await pauses inside that coroutine until an I/O task finishes, and the event loop can work on other tasks in the meantime.",
+      "with_memory_prompt_chars": 776,
+      "pass": true,
+      "checks": {
+        "with_memory_match": true,
+        "no_memory_baseline": true,
+        "prompt_budget_ok": true
+      }
+    },
+    {
+      "id": 6,
+      "scenario": "Docker debug lesson recall",
+      "group": "episodic recall",
+      "turns": [
+        "The bug was solved when we used the Docker service name instead of localhost.",
+        "We should remember that lesson.",
+        "What worked last time when we debugged Docker networking?"
+      ],
+      "no_memory_result": "I do not know because this run does not retain past episodes.",
+      "with_memory_result": "Last time the useful lesson was: Use the Docker service name instead of localhost between containers.",
+      "with_memory_prompt_chars": 743,
+      "pass": true,
+      "checks": {
+        "with_memory_match": true,
+        "no_memory_baseline": true,
+        "prompt_budget_ok": true
+      }
+    },
+    {
+      "id": 7,
+      "scenario": "Semantic retrieval for LangGraph",
+      "group": "semantic retrieval",
+      "turns": [
+        "What is LangGraph?"
+      ],
+      "no_memory_result": "LangGraph helps build agent workflows.",
+      "with_memory_result": "Here is the most relevant memory I found: LangGraph is a framework for building stateful graph-based agent workflows in Python.",
+      "with_memory_prompt_chars": 507,
+      "pass": true,
+      "checks": {
+        "with_memory_match": true,
+        "no_memory_baseline": true,
+        "prompt_budget_ok": true
+      }
+    },
+    {
+      "id": 8,
+      "scenario": "Semantic retrieval for FAQ chunk",
+      "group": "semantic retrieval",
+      "turns": [
+        "Where should I reset my password?"
+      ],
+      "no_memory_result": "I do not have stored FAQ memory in no-memory mode.",
+      "with_memory_result": "Here is the most relevant memory I found: The FAQ says password resets should be done from Settings > Security > Reset Password.",
+      "with_memory_prompt_chars": 399,
+      "pass": true,
+      "checks": {
+        "with_memory_match": true,
+        "no_memory_baseline": true,
+        "prompt_budget_ok": true
+      }
+    },
+    {
+      "id": 9,
+      "scenario": "Trim and token budget on long conversation",
+      "group": "trim/token budget",
+      "turns": [
+        "My name is Linh.",
+        "Here is a long note about agents, memory, context windows, prompts, retrieval, and debugging repeated many times to simulate a longer conversation turn one.",
+        "Here is another long note about orchestration, routing, evaluation, and prompt structure repeated many times to simulate conversation turn two.",
+        "Here is another long note about orchestration, routing, evaluation, and prompt structure repeated many times to simulate conversation turn three.",
+        "Here is another long note about orchestration, routing, evaluation, and prompt structure repeated many times to simulate conversation turn four.",
+        "Here is another long note about orchestration, routing, evaluation, and prompt structure repeated many times to simulate conversation turn five.",
+        "What is my name?"
+      ],
+      "no_memory_result": "I do not know because this run does not retain memory across turns.",
+      "with_memory_result": "Your name is Linh.",
+      "with_memory_prompt_chars": 1763,
+      "pass": true,
+      "checks": {
+        "with_memory_match": true,
+        "no_memory_baseline": true,
+        "prompt_budget_ok": true
+      }
+    },
+    {
+      "id": 10,
+      "scenario": "Detailed style preference recall",
+      "group": "profile recall",
+      "turns": [
+        "I want detailed answers.",
+        "We are reviewing my learning preferences.",
+        "What response style did I ask for?"
+      ],
+      "no_memory_result": "I do not know because this run does not retain memory across turns.",
+      "with_memory_result": "You asked for a detailed response style.",
+      "with_memory_prompt_chars": 570,
+      "pass": true,
+      "checks": {
+        "with_memory_match": true,
+        "no_memory_baseline": true,
+        "prompt_budget_ok": true
+      }
+    }
+  ]
+}

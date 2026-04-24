@@ -1,0 +1,126 @@
+[
+  {
+    "id": 1,
+    "name": "Recall user name after several turns",
+    "group": "profile recall",
+    "turns": [
+      "My name is Linh.",
+      "I am learning agent systems this week.",
+      "I like simple examples.",
+      "Thanks, continue.",
+      "Can you give one more note?",
+      "What is my name?"
+    ],
+    "with_memory_contains": ["Linh"],
+    "no_memory_should_not_contain": ["Linh"]
+  },
+  {
+    "id": 2,
+    "name": "Language preference recall",
+    "group": "profile recall",
+    "turns": [
+      "I like Python and I do not like Java.",
+      "I want to build an agent for a class demo.",
+      "Can you recommend a programming language for my next agent project?"
+    ],
+    "with_memory_contains": ["Python"],
+    "no_memory_should_not_contain": ["previously said"]
+  },
+  {
+    "id": 3,
+    "name": "Allergy conflict update",
+    "group": "conflict update",
+    "turns": [
+      "I am allergic to cow milk.",
+      "Actually I am allergic to soy, not cow milk.",
+      "What is my allergy?"
+    ],
+    "with_memory_contains": ["soy"],
+    "no_memory_should_not_contain": ["soy"]
+  },
+  {
+    "id": 4,
+    "name": "Response style recall",
+    "group": "profile recall",
+    "turns": [
+      "Please keep answers concise.",
+      "I am preparing a short demo.",
+      "What style should you use?"
+    ],
+    "with_memory_contains": ["concise"],
+    "no_memory_should_not_contain": ["concise"]
+  },
+  {
+    "id": 5,
+    "name": "Async confusion episodic recall",
+    "group": "episodic recall",
+    "turns": [
+      "I am confused about async and await.",
+      "Thanks, that still feels new to me.",
+      "Can you explain async/await again?"
+    ],
+    "with_memory_contains": ["Last time async/await felt confusing"],
+    "no_memory_should_not_contain": ["Last time async/await felt confusing"]
+  },
+  {
+    "id": 6,
+    "name": "Docker debug lesson recall",
+    "group": "episodic recall",
+    "turns": [
+      "The bug was solved when we used the Docker service name instead of localhost.",
+      "We should remember that lesson.",
+      "What worked last time when we debugged Docker networking?"
+    ],
+    "with_memory_contains": ["Docker service name", "localhost"],
+    "no_memory_should_not_contain": ["Docker service name"]
+  },
+  {
+    "id": 7,
+    "name": "Semantic retrieval for LangGraph",
+    "group": "semantic retrieval",
+    "turns": [
+      "What is LangGraph?"
+    ],
+    "with_memory_contains": ["stateful graph-based agent workflows"],
+    "no_memory_should_not_contain": ["stateful graph-based agent workflows"]
+  },
+  {
+    "id": 8,
+    "name": "Semantic retrieval for FAQ chunk",
+    "group": "semantic retrieval",
+    "turns": [
+      "Where should I reset my password?"
+    ],
+    "with_memory_contains": ["Settings > Security > Reset Password"],
+    "no_memory_should_not_contain": ["Settings > Security > Reset Password"]
+  },
+  {
+    "id": 9,
+    "name": "Trim and token budget on long conversation",
+    "group": "trim/token budget",
+    "turns": [
+      "My name is Linh.",
+      "Here is a long note about agents, memory, context windows, prompts, retrieval, and debugging repeated many times to simulate a longer conversation turn one.",
+      "Here is another long note about orchestration, routing, evaluation, and prompt structure repeated many times to simulate conversation turn two.",
+      "Here is another long note about orchestration, routing, evaluation, and prompt structure repeated many times to simulate conversation turn three.",
+      "Here is another long note about orchestration, routing, evaluation, and prompt structure repeated many times to simulate conversation turn four.",
+      "Here is another long note about orchestration, routing, evaluation, and prompt structure repeated many times to simulate conversation turn five.",
+      "What is my name?"
+    ],
+    "with_memory_contains": ["Linh"],
+    "no_memory_should_not_contain": ["Linh"],
+    "max_prompt_chars": 4000
+  },
+  {
+    "id": 10,
+    "name": "Detailed style preference recall",
+    "group": "profile recall",
+    "turns": [
+      "I want detailed answers.",
+      "We are reviewing my learning preferences.",
+      "What response style did I ask for?"
+    ],
+    "with_memory_contains": ["detailed"],
+    "no_memory_should_not_contain": ["detailed"]
+  }
+]

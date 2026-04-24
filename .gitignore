@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual environments
+.venv/
+venv/
+
+# Local environment
+.env
+
+# Runtime memory artifacts
+data/profile_memory.json
+data/episodic_memory.json
+data/semantic_memory.json
+data/chroma_db/
+
+# Generated benchmark artifacts
+
+# Local test caches
+.pytest_cache/
+.mypy_cache/
+
+# Lab planning / reference files not needed for grading
+plan.md
+report.md
+day02-assess-01-rubric-guidance.md
+day02-memory-systems-for-agents.pdf
+
+# OS noise
+Thumbs.db
+.DS_Store
